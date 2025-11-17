@@ -2,33 +2,21 @@
 // src/components/HeaderTop.astro
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
+import SearchBar from './SearchBar.astro';
 ---
 
-<div class="hidden lg:block bg-gray-100 border-b">
+<div class="hidden lg:block bg-white border-b">
   <div class="container mx-auto px-4 py-2 flex justify-between items-center">
     <div class="flex items-center">
       <a href="/">
         <Image src={logo} alt="Solar Nusantara Logo" width={150} />
       </a>
     </div>
-    <div class="flex items-center space-x-6">
-      <div class="flex items-center space-x-2 text-sm">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.05 12.318a6.5 6.5 0 018.9-8.9l.354.353a.5.5 0 010 .707l-1.414 1.414a.5.5 0 01-.707 0l-.353-.354a4.5 4.5 0 00-6.364 6.364l.353.353a.5.5 0 010 .707l-1.414 1.414a.5.5 0 01-.707 0l-.353-.353a6.5 6.5 0 01-.001-9.192zM10 11a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-          <path d="M14.95 7.682a6.5 6.5 0 01-8.9 8.9l-.354-.353a.5.5 0 010-.707l1.414-1.414a.5.5 0 01.707 0l.353.354a4.5 4.5 0 006.364-6.364l-.353-.353a.5.5 0 010 .707l1.414-1.414a.5.5 0 01.707 0l.353.353z" />
-        </svg>
-        <a href="tel:+6282170000575" class="hover:text-blue-600">+62 821 7000 0575</a>
-      </div>
-      <div class="flex items-center space-x-2 text-sm">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-        </svg>
-        <a href="mailto:bisnis@solarnusantara.id" class="hover:text-blue-600">bisnis@solarnusantara.id</a>
-      </div>
-      <a href="https://sonushub.id/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition-colors">
-        SonusHUB
-      </a>
+    <div class="flex-1 flex justify-center px-8">
+      <SearchBar />
     </div>
+    <a href="https://sonushub.id/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition-colors">
+      SonusHUB
+    </a>
   </div>
 </div>

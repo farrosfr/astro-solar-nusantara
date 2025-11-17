@@ -1,10 +1,12 @@
 ---
 // src/components/Header.astro
+import HeaderTop from './HeaderTop.astro';
 import Navbar from './Navbar.astro';
 import MobileHeader from './MobileHeader.astro';
 ---
 
-<header class="fixed top-0 left-0 w-full z-50">
+<header class="w-full z-50">
+  <HeaderTop />
   <Navbar />
   <MobileHeader />
 </header>
