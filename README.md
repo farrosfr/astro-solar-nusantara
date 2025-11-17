@@ -98,4 +98,10 @@ The pages and routes are defined in `src/pages`:
 - `/berita`: `src/pages/berita/index.astro`
 - `/berita/[...slug]`: `src/pages/berita/[...slug].astro` (Dynamic route for individual news articles)
 
+## Tech Stack
+
+- **Astro**: The web framework for building fast, content-focused websites.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+
 If you want to check, visit astro.solar-nusantara.id
