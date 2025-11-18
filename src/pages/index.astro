@@ -35,10 +35,10 @@ const energiBiomassaStats = [
 	<HeroSection />
 	<main>
 		<AboutIntro />
-    <ServiceHighlight title="Energi Terbarukan" stats={energiTerbarukanStats} />
-		<ServiceHighlight title="Manajemen Energi" stats={manajemenEnergiStats} />
-		<ServiceHighlight title="Energi Biomassa" stats={energiBiomassaStats} />
 		<NewsSection />
+    	<ServiceHighlight client:visible title="Energi Terbarukan" stats={energiTerbarukanStats} />
+		<ServiceHighlight client:visible title="Manajemen Energi" stats={manajemenEnergiStats} />
+		<ServiceHighlight client:visible title="Energi Biomassa" stats={energiBiomassaStats} />
 		<Benefits />
 		<ServiceCarousel />
 		<VideoSection />

@@ -24,3 +24,43 @@ const { title, stats } = Astro.props;
     ))}
   </div>
 </section>
+
+<script>
+  // This script runs when the component becomes visible on the client,
+  // thanks to the `client:visible` directive that will be used on it.
+  const counters = document.querySelectorAll('.stat-value');
+
+  const animateCountUp = (el: Element) => {
+    const rawValue = el.textContent || '0';
+    const target = parseInt(rawValue.replace(/[^0-9]/g, ''), 10);
+    const suffix = rawValue.replace(/[0-9,.]/g, '');
+    
+    const duration = 2000; // Animation duration in milliseconds
+    let start: number;
+
+    const step = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const percentage = Math.min(progress / duration, 1);
+      
+      const current = Math.floor(percentage * target);
+      el.textContent = current.toLocaleString() + suffix;
+
+      if (progress < duration) {
+        requestAnimationFrame(step);
+      } else {
+        // Ensure it ends on the exact target value
+        el.textContent = target.toLocaleString() + suffix;
+      }
+    };
+    
+    // Set initial text to 0 before starting animation
+    el.textContent = '0' + suffix;
+    requestAnimationFrame(step);
+  };
+
+  // Animate all counters found within this component
+  counters.forEach(counter => {
+    animateCountUp(counter);
+  });
+</script>
