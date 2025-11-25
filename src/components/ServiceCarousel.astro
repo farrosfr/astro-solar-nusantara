@@ -5,42 +5,87 @@ const serviceItems = [
     title: "Solar PV EPC",
     description: "Dengan memanfaatkan keahlian dan pengalaman kami di bidang EPC Solar PV, Solar Nusantara membantu perusahaan meningkatkan efisiensi energi dan mengurangi biaya operasional.",
     link: "https://solar-nusantara.id/our-service/c-i-segment/",
+    icon: `<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>`
   },
   {
     title: "Manajemen Energi",
     description: "Manajemen energi menjadi lebih mudah dengan GOLD, solusi terbaik untuk industri dan komersial. Sistem kontrol ini terintegrasi dengan pengumpulan data, analisis, dan pemantauan, yang mendukung tindakan ramah lingkungan.",
     link: "https://solar-nusantara.id/our-service/energy-monitoring-system-for-ci/",
+    icon: `<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
   },
   {
     title: "Sistem PJUTS",
     description: "Sistem PJUTS adalah solusi penerangan jalan umum tenaga surya yang efisien dan ramah lingkungan. Dirancang untuk memberikan penerangan optimal di berbagai area tanpa bergantung pada jaringan listrik konvensional.",
     link: "https://solar-nusantara.id/our-service/pjuts-system/",
+    icon: `<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`
   },
 ];
 ---
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-<section class="bg-white">
+<section class="bg-gray-50 py-8 xl:py-16">
   <div class="container mx-auto px-4">
-      <div class="mb-8 lg:mb-16">
-          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Layanan Kami</h2>
-          <p class="text-gray-500 sm:text-xl">Kami menawarkan solusi energi terbarukan yang komprehensif untuk memenuhi kebutuhan bisnis Anda.</p>
-      </div>
-      <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
-          {serviceItems.map(item => (
-            <div>
-                <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12">
-                    <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a1 1 0 001 1h12a1 1 0 001-1V5a1 1 0 000-2H3zm3 2a1 1 0 011-1h2a1 1 0 110 2H7a1 1 0 01-1-1zm0 4a1 1 0 011-1h2a1 1 0 110 2H7a1 1 0 01-1-1zm0 4a1 1 0 011-1h2a1 1- 0 110 2H7a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        Layanan Kami
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Solusi energi terbarukan terdepan untuk masa depan yang lebih hijau.
+      </p>
+    </div>
+
+    <div class="swiper-container service-carousel relative">
+      <div class="swiper-wrapper">
+        {serviceItems.map(item => (
+          <div class="swiper-slide h-full">
+            <div class="flex flex-col h-full bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="p-6 flex-grow">
+                <div class="flex items-center mb-4">
+                  <div class="flex-shrink-0" set:html={item.icon} />
+                  <h3 class="ml-4 text-xl font-bold text-gray-900">{item.title}</h3>
                 </div>
-                <h3 class="mb-2 text-xl font-bold text-gray-900">{item.title}</h3>
-                <p class="text-gray-500">{item.description}</p>
-                <a href={item.link} class="text-blue-600 hover:text-blue-800 font-semibold flex items-center mt-4">
-                  selengkapnya
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                  </svg>
+                <p class="text-gray-600 text-base">{item.description}</p>
+              </div>
+              <div class="p-6 bg-gray-50">
+                <a href={item.link} class="font-bold text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                  Selengkapnya &rarr;
                 </a>
+              </div>
             </div>
-          ))}
+          </div>
+        ))}
       </div>
+      
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-prev text-blue-600"></div>
+      <div class="swiper-button-next text-blue-600"></div>
+    </div>
   </div>
 </section>
+
+<script is:inline src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+import Swiper from "swiper";
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.service-carousel', {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      }
+    });
+  });
+</script>
