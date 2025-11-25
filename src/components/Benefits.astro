@@ -26,33 +26,33 @@ const otherBenefits = [
 ];
 ---
 
-<section class="bg-gray-900">
+<section class="bg-white py-8 xl:py-16">
   <div class="container mx-auto px-4">
     <div class="mb-16">
-      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Mari kita bicarakan tentang manfaatnya.</h2>
-      <p class="text-gray-400 sm:text-xl">Solar Nusantara memberikan berbagai manfaat, mulai dari penghematan biaya hingga kontribusi positif bagi lingkungan.</p>
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Mari kita bicarakan tentang manfaatnya.</h2>
+      <p class="text-gray-600 sm:text-xl">Solar Nusantara memberikan berbagai manfaat, mulai dari penghematan biaya hingga kontribusi positif bagi lingkungan.</p>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
       <!-- Column 1 -->
       <div class="flex flex-col gap-4">
-        <div class="flex-shrink-0 w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
+        <div class="flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
           <Fragment set:html={mainBenefits[0].icon} />
         </div>
         <div>
-          <h3 class="mb-2 text-xl font-bold text-white">{mainBenefits[0].title}</h3>
-          <p class="text-gray-400">{mainBenefits[0].description}</p>
+          <h3 class="mb-2 text-xl font-bold text-gray-900">{mainBenefits[0].title}</h3>
+          <p class="text-gray-600">{mainBenefits[0].description}</p>
         </div>
       </div>
       
       <!-- Column 2 -->
       <div class="flex flex-col gap-4">
-        <div class="flex-shrink-0 w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
+        <div class="flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
           <Fragment set:html={mainBenefits[1].icon} />
         </div>
         <div>
-          <h3 class="mb-2 text-xl font-bold text-white">{mainBenefits[1].title}</h3>
-          <p class="text-gray-400">{mainBenefits[1].description}</p>
+          <h3 class="mb-2 text-xl font-bold text-gray-900">{mainBenefits[1].title}</h3>
+          <p class="text-gray-600">{mainBenefits[1].description}</p>
         </div>
       </div>
       
@@ -60,10 +60,10 @@ const otherBenefits = [
       <div class="flex flex-col gap-y-5">
         {otherBenefits.map(benefit => (
           <div class="flex items-center gap-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+            <div class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
               <Fragment set:html={benefit.icon} />
             </div>
-            <h3 class="text-lg font-bold text-white">{benefit.title}</h3>
+            <h3 class="text-lg font-bold text-gray-900">{benefit.title}</h3>
           </div>
         ))}
       </div>
