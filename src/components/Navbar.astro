@@ -14,7 +14,15 @@ const navLinks: NavLink[] = [
     href: "/tentang", 
     text: "Tentang",
     children: [
-      { href: "/tentang/tentang-solar-nusantara", text: "Tentang Solar Nusantara" },
+      { 
+        href: "/tentang/tentang-solar-nusantara", 
+        text: "Tentang Solar Nusantara",
+        children: [
+          { href: "/tentang/tentang-solar-nusantara/kebijakan-k3l-dan-sosial", text: "Kebijakan K3L dan Sosial" },
+          { href: "/tentang/tentang-solar-nusantara/kebijakan-larangan-penggunaan-obat-obatan-terlarang-dan-alkohol", text: "Kebijakan Larangan Penggunaan Obat-obatan Terlarang dan Alkohol" },
+          { href: "/tentang/tentang-solar-nusantara/kebijakan-pencegahan-terjatuh", text: "Kebijakan Pencegahan Terjatuh" },
+        ]
+      },
       {
         href: "/tentang/tentang-sonushub",
         text: "Tentang SonusHUB"
