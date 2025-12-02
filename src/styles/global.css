@@ -14,3 +14,12 @@ body {
 section {
   @apply py-16 sm:py-20;
 }
+
+/* Custom styles for images in markdown to center and round them */
+.prose img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* Ensures margin auto works for horizontal centering */
+  border-radius: 0.5rem; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for modern feel */
+}
