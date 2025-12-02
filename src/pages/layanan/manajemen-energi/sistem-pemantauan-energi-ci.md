@@ -3,18 +3,18 @@ layout: ../../../layouts/Layout.astro
 title: "Sistem Pemantauan Energi untuk C&I"
 ---
 ![alt text](image.png)
-Welcome to SONUS, a leading energy management company that provides innovative solutions to help businesses and industries optimize their energy usage. Our mission is to make a positive impact on the environment by reducing carbon emissions and improving energy efficiency.
+Selamat datang di SONUS, perusahaan manajemen energi terkemuka yang menyediakan solusi inovatif untuk membantu bisnis dan industri mengoptimalkan penggunaan energi mereka. Misi kami adalah memberikan dampak positif bagi lingkungan dengan mengurangi emisi karbon dan meningkatkan efisiensi energi.
 
-## Our Service
+## Layanan Kami
 
-We offer energy management solutions to our clients through our EPC (Engineering, Procurement, and Construction) Solar PV system. Our solar PV system provides sustainable and cost-effective energy to businesses and industries, reducing their reliance on traditional energy sources. We also offer a range of services such as energy audits, energy benchmarking, and performance analysis to help our clients identify areas where they can reduce energy consumption and save costs.
+Kami menawarkan solusi manajemen energi kepada klien kami melalui sistem EPC (Engineering, Procurement, and Construction) Solar PV kami. Sistem solar PV kami menyediakan energi yang berkelanjutan dan hemat biaya untuk bisnis dan industri, mengurangi ketergantungan mereka pada sumber energi tradisional. Kami juga menawarkan berbagai layanan seperti audit energi, tolok ukur energi, dan analisis kinerja untuk membantu klien kami mengidentifikasi area di mana mereka dapat mengurangi konsumsi energi dan menghemat biaya.
 
-## Management Energy
+## Manajemen Energi
 
-At SONUS, we understand the importance of managing energy consumption effectively. We offer energy management services that include monitoring and controlling energy usage, implementing energy-saving measures, and optimizing energy consumption. Our team of experienced energy consultants works with clients to develop a customized energy management plan that fits their specific needs.
+Di SONUS, kami memahami pentingnya mengelola konsumsi energi secara efektif. Kami menawarkan layanan manajemen energi yang mencakup pemantauan dan pengendalian penggunaan energi, penerapan langkah-langkah penghematan energi, dan optimalisasi konsumsi energi. Tim konsultan energi kami yang berpengalaman bekerja sama dengan klien untuk mengembangkan rencana manajemen energi yang disesuaikan dengan kebutuhan spesifik mereka.
 
-## Corporate and Industry
+## Korporat dan Industri
 
-We work with a wide range of industries, including manufacturing, healthcare, education, hospitality, and commercial real estate, to help them reduce their energy costs and carbon footprint. We have a proven track record of delivering energy management solutions that not only reduce energy consumption but also increase energy efficiency, resulting in significant cost savings.
+Kami bekerja dengan berbagai industri, termasuk manufaktur, kesehatan, pendidikan, perhotelan, dan real estat komersial, untuk membantu mereka mengurangi biaya energi dan jejak karbon. Kami memiliki rekam jejak yang terbukti dalam memberikan solusi manajemen energi yang tidak hanya mengurangi konsumsi energi tetapi juga meningkatkan efisiensi energi, yang menghasilkan penghematan biaya yang signifikan.
 
-Our commitment to innovation, sustainability, and customer satisfaction sets us apart from other energy management companies. Contact us today to learn more about our energy management services and how we can help your business become more energy-efficient and sustainable.
+Komitmen kami terhadap inovasi, keberlanjutan, dan kepuasan pelanggan membedakan kami dari perusahaan manajemen energi lainnya. Hubungi kami hari ini untuk mempelajari lebih lanjut tentang layanan manajemen energi kami dan bagaimana kami dapat membantu bisnis Anda menjadi lebih hemat energi dan berkelanjutan.

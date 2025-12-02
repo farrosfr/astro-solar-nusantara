@@ -20,7 +20,7 @@ export const navLinks: NavLink[] = [
         ]
       },
       {
-        href: "https://profile.sonushub.id/",
+        href: "/tentang/sonushub",
         text: "Tentang SonusHUB"
       },
       { href: "/tentang/visi-dan-misi", text: "Visi dan Misi" },
