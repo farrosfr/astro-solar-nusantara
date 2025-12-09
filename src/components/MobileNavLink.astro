@@ -1,0 +1,49 @@
+---
+import type { NavLink } from '../data/navLinks';
+import MobileNavLink from './MobileNavLink.astro';
+
+export interface Props {
+  link: NavLink;
+  level?: number;
+}
+
+const { link, level = 0 } = Astro.props;
+
+const textSizeClasses = [
+  "text-2xl",  // level 0
+  "text-xl",   // level 1
+  "text-lg",   // level 2
+  "text-md",   // level 3
+  "text-sm"    // level 4
+];
+
+const textSize = textSizeClasses[level] || "text-sm";
+---
+<li class="w-full">
+  <div class:list={["flex items-center justify-between w-full", { "pl-4": level > 0 }]}>
+    <a 
+      href={link.href || '#'} 
+      class:list={[
+        "font-semibold text-gray-800 hover:text-blue-600 py-2 text-left flex-grow",
+        textSize,
+        { "pointer-events-none": !link.href }
+      ]}
+    >
+      {link.text}
+    </a>
+    {link.children && (
+      <button class="submenu-toggle p-2 flex-shrink-0">
+        <svg class="w-5 h-5 text-gray-800 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    )}
+  </div>
+  {link.children && (
+    <ul class="submenu hidden mt-2 space-y-2">
+      {link.children.map(child => (
+        <MobileNavLink link={child} level={level + 1} />
+      ))}
+    </ul>
+  )}
+</li>

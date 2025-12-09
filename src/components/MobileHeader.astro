@@ -1,21 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
-
-const navLinks = [
-  { href: "/", text: "Beranda" },
-  { href: "/tentang", text: "Tentang Kami" },
-  { href: "/layanan", text: "Layanan" },
-  { href: "/produk", text: "Produk" },
-  { href: "/pintar", text: "Pintar" },
-  { href: "/kontak", text: "Kontak" },
-  { href: "/berita", text: "Berita" },
-];
+import { navLinks } from '../data/navLinks';
+import MobileNavLink from './MobileNavLink.astro';
 ---
 
-<div class="lg:hidden flex w-full items-center justify-between bg-white h-20 px-4 sticky top-0 z-50">
-  <a href="/">
-    <Image src={logo} alt="Solar Nusantara Logo" width={120} />
+<div id="mobile-header" class="lg:hidden flex w-full items-center justify-between bg-white h-20 px-4 sticky top-0 z-50 transition-all duration-300">
+  <a href="/" class="flex items-center h-full">
+    <Image src={logo} alt="Solar Nusantara Logo" width={120} class="logo-default transition-opacity duration-300" />
+    <span class="logo-scrolled hidden text-gray-800 font-bold text-xl whitespace-nowrap">Solar Nusantara</span>
   </a>
   <button id="menu-toggle" aria-label="Open menu" class="z-50">
     <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,13 +20,11 @@ const navLinks = [
   </button>
 </div>
 
-<div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
-  <nav class="flex flex-col items-center justify-center h-full">
-    <ul class="flex flex-col space-y-8 text-center">
+<div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto">
+  <nav class="flex flex-col items-center justify-start min-h-full pt-24 pb-12 px-4">
+    <ul class="flex flex-col space-y-4 text-center w-full max-w-xs">
       {navLinks.map(link => (
-        <li>
-          <a href={link.href} class="text-2xl font-semibold text-gray-800 hover:text-blue-600">{link.text}</a>
-        </li>
+        <MobileNavLink link={link} />
       ))}
     </ul>
   </nav>
@@ -41,6 +32,7 @@ const navLinks = [
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // --- Main menu toggle ---
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const body = document.body;
@@ -55,5 +47,50 @@ const navLinks = [
         closeIcon.classList.toggle('hidden');
       });
     }
+
+    // --- Submenu accordion toggle ---
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', (event) => {
+        const toggle = event.target.closest('.submenu-toggle');
+        if (!toggle) return;
+
+        const parentLi = toggle.closest('li');
+        if (!parentLi) return;
+        
+        const submenu = parentLi.querySelector('.submenu');
+        const icon = toggle.querySelector('svg');
+
+        if (submenu) {
+          submenu.classList.toggle('hidden');
+          icon.classList.toggle('rotate-180');
+        }
+      });
+    }
+
+    // --- Scroll behavior ---
+    const header = document.getElementById('mobile-header');
+    if (header) {
+      const logoDefault = header.querySelector('.logo-default');
+      const logoScrolled = header.querySelector('.logo-scrolled');
+
+      const handleScroll = () => {
+        const isScrolled = window.scrollY > 20;
+        header.classList.toggle('scrolled', isScrolled);
+        logoDefault?.classList.toggle('hidden', isScrolled);
+        logoScrolled?.classList.toggle('hidden', !isScrolled);
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll(); // Initial check
+    }
   });
 </script>
+
+<style>
+  #mobile-header.scrolled {
+    @apply rounded-full shadow-lg mx-auto;
+    width: 95%;
+    top: 0.5rem;
+    height: 4.5rem; /* h-18 */
+  }
+</style>

@@ -46,14 +46,14 @@ const hasHeadings = headings && headings.length > 0;
 		  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 		</noscript>
 	</head>
-	<body class="bg-white">
+	<body class="bg-white min-h-screen flex flex-col">
 		<Header />
 		<Navbar />
 		<MobileHeader />
 		
     {isMarkdownPage ? (
       // Smart Layout for .md pages
-      <main>
+      <main class="flex-grow">
         <div class="container mx-auto px-4 py-16">
           {hasHeadings ? (
             // With Table of Contents
@@ -90,7 +90,7 @@ const hasHeadings = headings && headings.length > 0;
       </main>
     ) : (
       // Simple Layout for .astro pages
-      <main>
+      <main class="flex-grow">
         <slot />
       </main>
     )}

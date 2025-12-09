@@ -104,10 +104,11 @@ export const navLinks: NavLink[] = [
             text: "Energi Biomassa",
             children: [
                 { href: "/produk/energi-biomassa/pelet-kayu", text: "Pelet Kayu" },
-                { href: "/produk/energi-biomassa/rdf-srf", text: "RDF SRF" },
-                { href: "/produk/energi-biomassa/seri-50100-fg", text: "Seri 50100 FG" },
+                { href: "/produk/energi-biomassa/rdf", text: "RDF" },
+                { href: "/produk/energi-biomassa/srf", text: "SRF" }
             ]
-        }
+        },
+        { href: "/produk/seri-50100-fg", text: "Seri 50100 FG" }
     ]
   },
   { href: "/pintar", text: "Pintar" },
