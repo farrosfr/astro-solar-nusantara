@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
 import { navLinks } from '../data/navLinks';
 import MobileNavLink from './MobileNavLink.astro';
+import SearchBar from './SearchBar.astro'; // Import SearchBar component
 ---
 
 <div id="mobile-header" class="lg:hidden flex w-full items-center justify-between bg-white h-20 px-4 sticky top-0 z-50 transition-all duration-300">
@@ -22,6 +23,9 @@ import MobileNavLink from './MobileNavLink.astro';
 
 <div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto">
   <nav class="flex flex-col items-center justify-start min-h-full pt-24 pb-12 px-4">
+    <div class="w-full max-w-xs mb-6"> {/* Wrapper div for SearchBar with margin */}
+        <SearchBar instance="mobile" />
+    </div>
     <ul class="flex flex-col space-y-4 text-center w-full max-w-xs">
       {navLinks.map(link => (
         <MobileNavLink link={link} />
