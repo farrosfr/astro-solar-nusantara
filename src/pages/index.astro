@@ -12,6 +12,10 @@ import ProductCarousel from '../components/ProductCarousel.astro';
 import energiTerbarukanIcon from '../assets/icons/energi-baru.svg?raw';
 import manajemenEnergiIcon from '../assets/icons/manajemen-energi.svg?raw';
 import biomassIcon from '../assets/icons/biomass.svg?raw';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('berita');
+const latestPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 2);
 
 const energiTerbarukanStats = [
   { iconPath: energiTerbarukanIcon, value: "17", title: "Proyek yang sedang Berjalan" },
@@ -35,27 +39,27 @@ const products = [
   {
     title: "Impor Panel",
     description: "Sistem Panel Surya adalah solusi inovatif dan efektif untuk menghasilkan listrik dengan memanfaatkan energi matahari.",
-    url: "/produk"
+    url: "/produk/sistem-panel-surya/panel-surya/panel-impor"
   },
   {
     title: "Panel TKDN",
     description: "Panel surya semakin populer sebagai sumber energi alternatif, dan panel TKDN dari SONUS menawarkan solusi yang terjangkau.",
-    url: "/produk"
+    url: "/produk/sistem-panel-surya/panel-surya/panel-tkdn"
   },
   {
     title: "SPKL",
     description: "SPKL adalah salah satu inovasi dari Sonus di bidang kendaraan listrik untuk infrastruktur pengisian daya yang efisien.",
-    url: "/produk"
+    url: "/produk/ekosistem-ev/spkl"
   },
   {
     title: "Wood Pellet",
     description: "Energi biomassa adalah sumber energi terbarukan yang dihasilkan dari bahan organik, seperti serbuk kayu dan limbah pertanian.",
-    url: "/produk"
+    url: "/produk/energi-biomassa/pelet-kayu"
   },
   {
     title: "50100 FG Series",
     description: "Sumber daya listrik yang andal untuk Anda yang sering beraktivitas di daerah terpencil atau hidup tanpa bergantung pada jaringan listrik.",
-    url: "/produk"
+    url: "/produk/seri-50100-fg"
   }
 ];
 ---
@@ -64,7 +68,7 @@ const products = [
 	<HeroSection />
 	<main>
 		<AboutIntro />
-		<NewsSection />
+		<NewsSection posts={latestPosts} />
     <ServiceHighlight client:visible title="Energi Terbarukan" stats={energiTerbarukanStats} />
 		<ServiceHighlight client:visible title="Manajemen Energi" stats={manajemenEnergiStats} />
 		<ServiceHighlight client:visible title="Energi Biomassa" stats={energiBiomassaStats} />
